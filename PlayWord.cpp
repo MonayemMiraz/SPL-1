@@ -39,37 +39,37 @@ int score;
 void showTitle(int time)
 {
 
-cout<<GREEN<<BOLD<<" P ";
-cout<<RESET;
-my_Sleep(time);
+    cout<<GREEN<<BOLD<<" P ";
+    cout<<RESET;
+    my_Sleep(time);
 
-cout<<YELLOW<<BOLD<<" l ";
-cout<<RESET;
-my_Sleep(time);
+    cout<<YELLOW<<BOLD<<" l ";
+    cout<<RESET;
+    my_Sleep(time);
 
-cout<<RED<<BOLD<<" a ";
-cout<<RESET;
-my_Sleep(time);
+    cout<<RED<<BOLD<<" a ";
+    cout<<RESET;
+    my_Sleep(time);
 
-cout<<GREEN<<BOLD<<" y ";
-cout<<RESET;
-my_Sleep(time);
+    cout<<GREEN<<BOLD<<" y ";
+    cout<<RESET;
+    my_Sleep(time);
 
-cout<<YELLOW<<BOLD<<" W ";
-cout<<RESET;
-my_Sleep(time);
+    cout<<YELLOW<<BOLD<<" W ";
+    cout<<RESET;
+    my_Sleep(time);
 
-cout<<RED<<BOLD<<" o ";
-cout<<RESET;
-my_Sleep(time);
+    cout<<RED<<BOLD<<" o ";
+    cout<<RESET;
+    my_Sleep(time);
 
-cout<<GREEN<<BOLD<<" r ";
-cout<<RESET;
-my_Sleep(time);
+    cout<<GREEN<<BOLD<<" r ";
+    cout<<RESET;
+    my_Sleep(time);
 
-cout<<YELLOW<<BOLD<<" d ";
-cout<<RESET;
-my_Sleep(time);
+    cout<<YELLOW<<BOLD<<" d ";
+    cout<<RESET;
+    my_Sleep(time);
 
 }
 
