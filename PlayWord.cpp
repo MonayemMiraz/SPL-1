@@ -1,21 +1,35 @@
 #include<iostream>
-#include <time.h> // used for making my_Sleep function
+#include <time.h> // used for making my_Sleep 
 
 using namespace std;
 
 #define __USE_POSIX199309
 #define _POSIX_C_SOURCE 199309L
+#define CLEAR "\e[1;1H\e[2J"
 #define RESET  "\033[0m"
 #define RED "\033[41m" 
 #define GREEN "\033[42m" 
 #define YELLOW "\033[43m" 
+#define CYAN "\033[36m"
 #define BOLD "\033[1m"
 
+
+//function for converting all letter into uppercase
+char upperLetter(char ch){
+    if ((int)ch >= 97 && (int)ch <= 122 )
+    {   
+        ch = char((int)ch-32);
+    }
+    return ch;
+}
+
+
+//function for using delay in console for design
 void my_Sleep(unsigned long ms)
 {
     struct timespec ts;
-    ts.tv_sec = ms / 1000000ul;            // whole seconds
-    ts.tv_nsec = (ms % 1000000ul) * 1000;  // remainder, in nanoseconds
+    ts.tv_sec = ms / 1000000ul;            // seconds
+    ts.tv_nsec = (ms % 1000000ul) * 1000;  // remainder in nanoseconds
     nanosleep(&ts, NULL);
 }
 
@@ -38,7 +52,7 @@ int score;
 //ffunction for the first screen display
 void showTitle(int time)
 {
-
+    cout<<"\n\n          ";
     cout<<GREEN<<BOLD<<" P ";
     cout<<RESET;
     my_Sleep(time);
@@ -69,7 +83,10 @@ void showTitle(int time)
 
     cout<<YELLOW<<BOLD<<" d ";
     cout<<RESET;
-    my_Sleep(time);
+    my_Sleep(time*5);
+
+    cout<<"\n\n";
+    
 
 }
 
@@ -80,9 +97,20 @@ void showTitle(int time)
 
 int main()
 {
+    cout<<RESET;
 
     showTitle(750000);
+    cout<<CLEAR;
     
+    showTitle(0);
+    char isReady;
+    cout<<CYAN;
+    cout<<"Are you ready to play? Press (Y) to start  ";
+    cout<<RESET;
+    cin>>isReady;
+    isReady=upperLetter(isReady);
+    cout<<isReady;
+
 
 }
 
