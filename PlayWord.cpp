@@ -1,5 +1,6 @@
 #include<iostream>
-#include <time.h> // used for making my_Sleep 
+#include<time.h>
+#include<fstream> // used for making my_Sleep 
 
 using namespace std;
 
@@ -14,7 +15,8 @@ using namespace std;
 
 
 //function for converting all letter into uppercase
-char upperLetter(char ch){
+char upperLetter(char ch)
+{
     if ((int)ch >= 97 && (int)ch <= 122 )
     {   
         ch = char((int)ch-32);
@@ -102,6 +104,22 @@ bool shouldStart(char isReady)
     
 }
 
+void selectRandomWord()
+{   
+    int randWord;
+    srand(time(NULL));
+    randWord=rand()%336;
+
+    string str;
+    ifstream file("Dictionary.txt",ios::in);
+    file.seekg(ios::beg);
+    for (int i = 1; i <= randWord; i++)
+    {
+        getline(file,str);
+    }
+    cout<<randWord<<" "<<str;
+    
+}
 
 
 
@@ -122,10 +140,12 @@ int main()
     isReady=upperLetter(isReady);
     // cout<<isReady;
 
-    if(!shouldStart(isReady)){
+    if(!shouldStart(isReady))
+    {
         return 0;
     }
     
+    selectRandomWord();
 
 }
 
