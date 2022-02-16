@@ -3,8 +3,7 @@
 
 using namespace std;
 
-#define __USE_POSIX199309
-#define _POSIX_C_SOURCE 199309L
+
 #define CLEAR "\e[1;1H\e[2J"
 #define RESET  "\033[0m"
 #define RED "\033[41m" 
@@ -47,7 +46,7 @@ char tryWord5[5];
 char tryWord6[5];
 
 //score storing variables
-int score;
+int score=0;
 
 //ffunction for the first screen display
 void showTitle(int time)
@@ -90,6 +89,18 @@ void showTitle(int time)
 
 }
 
+bool shouldStart(char isReady)
+{
+    if (isReady == 'Y')
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+    
+}
 
 
 
@@ -109,8 +120,12 @@ int main()
     cout<<RESET;
     cin>>isReady;
     isReady=upperLetter(isReady);
-    cout<<isReady;
+    // cout<<isReady;
 
+    if(!shouldStart(isReady)){
+        return 0;
+    }
+    
 
 }
 
