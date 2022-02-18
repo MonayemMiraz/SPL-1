@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#include"SPL.h"
+#include"playword_lib.h"
 using namespace std;
 
 //defining variable
@@ -73,8 +73,19 @@ void showTitle(int time)
 
 }
 
-bool shouldStart(char isReady)
+bool shouldStart()
 {
+    char isReady;
+    
+    cout<<CYAN;
+    cout<<"Are you ready to play? Press (Y) to start  ";
+    cout<<RESET;
+    
+    cin>>isReady;
+    
+    isReady=upperLetter(isReady);
+    // cout<<isReady;
+
     if (isReady == 'Y')
     {
         return 1;
@@ -103,8 +114,10 @@ void selectRandomWord()
     randWord=rand()%336;
 
     string str;
+
     ifstream file("Dictionary.txt",ios::in);
     file.seekg(ios::beg);
+
     for (int i = 1; i <= randWord; i++)
     {
         getline(file,str);
@@ -118,5 +131,9 @@ void selectRandomWord()
         // cout<<randSelectedWord[i];
     }
     
-    
+}
+
+void instructions()
+{
+
 }

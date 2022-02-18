@@ -27,6 +27,7 @@ extern int score;
 char upperLetter(char ch);
 void my_Sleep(unsigned long ms);
 void showTitle(int time);
-bool shouldStart(char isReady);
+bool shouldStart();
 void selectRandomWord();
 int strLen(std::string str);
+void instructions();
