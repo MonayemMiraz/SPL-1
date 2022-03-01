@@ -142,13 +142,13 @@ void instructions()
     cout << DOUBLESPACE;
 
     cout << CYAN;
-    cout << "Try to guess the word within 6 tries ";
+    cout << "** Try to guess the word within 6 tries ";
     cout << DOUBLESPACE;
 
-    cout << "Each guess must be a valid 5 letter word. Hit the enter button to submit ";
+    cout << "** Each guess must be a valid 5 letter word. Hit the enter button to submit ";
     cout << DOUBLESPACE;
 
-    cout << "After each guess, the color of the tiles will change to show how close your guess was to the word ";
+    cout << "** After each guess, the color of the tiles will change to show how close your guess was to the word ";
     cout << RESET;
     cout << DOUBLESPACE << endl;
 
@@ -157,13 +157,13 @@ void instructions()
     cout << DOUBLESPACE;
 
     cout << CYAN;
-    cout << "The letter " << RESET;
+    cout << "-> The letter " << RESET;
     cout << GREENletter << "P" << ","<< "y" << "," << "r" << RESET << CYAN <<  " are in the word and in the correct spot ";
     cout << DOUBLESPACE;
-    cout << "The letter " << RESET;
+    cout << "-> The letter " << RESET;
     cout << YELLOWletter << "l" << "," << "w" << "," << "d" << RESET << CYAN << " are in the word but in the wrong spot ";
     cout << DOUBLESPACE;
-    cout << "The letter " << RESET;
+    cout << "-> The letter " << RESET;
     cout << REDletter << "a" << "," << "o" << RESET << CYAN << " are not in the word ";
     cout << RESET;
     cout << DOUBLESPACE << DOUBLESPACE;
