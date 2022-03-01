@@ -33,40 +33,42 @@ void my_Sleep(unsigned long ms)
 
 
 //ffunction for the first screen display
-void showTitle(int time)
-{
+void showTitle(int timeForGap,int timeForClear )
+{   
+    my_Sleep(timeForClear);
+    cout << CLEAR;
     cout << "\n\n          ";
     cout << GREEN<<BOLD<<" P ";
     cout << RESET;
-    my_Sleep(time);
+    my_Sleep(timeForGap);
 
     cout << YELLOW<<BOLD<<" l ";
     cout << RESET;
-    my_Sleep(time);
+    my_Sleep(timeForGap);
 
     cout << RED<<BOLD<<" a ";
     cout << RESET;
-    my_Sleep(time);
+    my_Sleep(timeForGap);
 
     cout << GREEN<<BOLD<<" y ";
     cout << RESET;
-    my_Sleep(time);
+    my_Sleep(timeForGap);
 
     cout << YELLOW<<BOLD<<" W ";
     cout << RESET;
-    my_Sleep(time);
+    my_Sleep(timeForGap);
 
     cout << RED<<BOLD<<" o ";
     cout << RESET;
-    my_Sleep(time);
+    my_Sleep(timeForGap);
 
     cout << GREEN<<BOLD<<" r ";
     cout << RESET;
-    my_Sleep(time);
+    my_Sleep(timeForGap);
 
     cout << YELLOW<<BOLD<<" d ";
     cout << RESET;
-    my_Sleep(time*5);
+    my_Sleep(timeForGap*5);
 
     cout << "\n\n";
     
@@ -136,8 +138,7 @@ void selectRandomWord()
 void instructions()
 {
     
-    cout << CLEAR;
-    showTitle(0);
+    showTitle(0,1000000);
     cout << DOUBLESPACE;
 
     cout << CYAN;
@@ -151,13 +152,13 @@ void instructions()
     cout << RESET;
     cout << DOUBLESPACE << endl;
 
-    showTitle(0);
+    showTitle(0,10000000);
     cout << RESET;
     cout << DOUBLESPACE;
 
     cout << CYAN;
     cout << "The letter " << RESET;
-    cout << GREENletter << "P" << ","<< "y" << "," << "r" << RESET << CYAN <<  "are in the word and in the correct spot ";
+    cout << GREENletter << "P" << ","<< "y" << "," << "r" << RESET << CYAN <<  " are in the word and in the correct spot ";
     cout << DOUBLESPACE;
     cout << "The letter " << RESET;
     cout << YELLOWletter << "l" << "," << "w" << "," << "d" << RESET << CYAN << " are in the word but in the wrong spot ";
@@ -165,8 +166,35 @@ void instructions()
     cout << "The letter " << RESET;
     cout << REDletter << "a" << "," << "o" << RESET << CYAN << " are not in the word ";
     cout << RESET;
-    cout << DOUBLESPACE;
+    cout << DOUBLESPACE << DOUBLESPACE;
+    my_Sleep(5000000);
 
+}
 
+void dashMatrix(int n)
+{
+    
+    for (int i = 0; i < n; i++)
+    {
+      for (int j = 0; j < 5; j++)
+      {
+        cout << " _ ";
+      }
+      cout << DOUBLESPACE;
+    }
+
+}
+
+void keyboard()
+{
+
+  cout << DOUBLESPACE;
+  cout << LightCyan;
+  cout << " Q " << " W " << " E " << " R " << " T " << " Y " << " U " << " I " << " O " << " P ";
+  cout << DOUBLESPACE;
+  cout << "  " << " A " << " S " << " D " << " F " << " G " << " H " << " J " << " K " << " L ";
+  cout << DOUBLESPACE;
+  cout << "     " << " Z " << " X " << " C " << " V " << " B " << " N " << " M ";
+  cout << DOUBLESPACE;
 
 }

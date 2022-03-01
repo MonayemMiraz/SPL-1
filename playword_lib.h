@@ -12,6 +12,7 @@ using namespace std;
 #define CYAN "\033[36m"
 #define BOLD "\033[1m"
 #define DOUBLESPACE "\n\n"
+#define LightCyan  "\033[96m"
 
 // this is the randomly selected word
 extern char randSelectedWord[5];
@@ -31,9 +32,10 @@ extern int score;
 
 char upperLetter(char ch);
 void my_Sleep(unsigned long ms);
-void showTitle(int time);
+void showTitle(int timeForGap, int timeForClear);
 bool shouldStart();
 void selectRandomWord();
 int strLen(std::string str);
 void instructions();
 void dashMatrix(int n);
+void keyboard();

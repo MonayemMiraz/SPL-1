@@ -9,12 +9,9 @@ using namespace std;
 
 int main()
 {
-    cout<<RESET;
-
-    showTitle(750000);
-    cout<<CLEAR;
     
-    showTitle(0);
+    showTitle(750000,100000);
+    showTitle(0,1000000);
 
     if(!shouldStart())
     {
@@ -24,8 +21,10 @@ int main()
     selectRandomWord();
 
     instructions();
-
     
+    dashMatrix(6);
+    keyboard();
+
 
 
 }
