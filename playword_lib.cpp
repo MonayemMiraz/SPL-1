@@ -35,40 +35,40 @@ void my_Sleep(unsigned long ms)
 //ffunction for the first screen display
 void showTitle(int time)
 {
-    cout<<"\n\n          ";
-    cout<<GREEN<<BOLD<<" P ";
-    cout<<RESET;
+    cout << "\n\n          ";
+    cout << GREEN<<BOLD<<" P ";
+    cout << RESET;
     my_Sleep(time);
 
-    cout<<YELLOW<<BOLD<<" l ";
-    cout<<RESET;
+    cout << YELLOW<<BOLD<<" l ";
+    cout << RESET;
     my_Sleep(time);
 
-    cout<<RED<<BOLD<<" a ";
-    cout<<RESET;
+    cout << RED<<BOLD<<" a ";
+    cout << RESET;
     my_Sleep(time);
 
-    cout<<GREEN<<BOLD<<" y ";
-    cout<<RESET;
+    cout << GREEN<<BOLD<<" y ";
+    cout << RESET;
     my_Sleep(time);
 
-    cout<<YELLOW<<BOLD<<" W ";
-    cout<<RESET;
+    cout << YELLOW<<BOLD<<" W ";
+    cout << RESET;
     my_Sleep(time);
 
-    cout<<RED<<BOLD<<" o ";
-    cout<<RESET;
+    cout << RED<<BOLD<<" o ";
+    cout << RESET;
     my_Sleep(time);
 
-    cout<<GREEN<<BOLD<<" r ";
-    cout<<RESET;
+    cout << GREEN<<BOLD<<" r ";
+    cout << RESET;
     my_Sleep(time);
 
-    cout<<YELLOW<<BOLD<<" d ";
-    cout<<RESET;
+    cout << YELLOW<<BOLD<<" d ";
+    cout << RESET;
     my_Sleep(time*5);
 
-    cout<<"\n\n";
+    cout << "\n\n";
     
 
 }
@@ -77,14 +77,14 @@ bool shouldStart()
 {
     char isReady;
     
-    cout<<CYAN;
-    cout<<"Are you ready to play? Press (Y) to start  ";
-    cout<<RESET;
+    cout << CYAN;
+    cout << "Are you ready to play? Press (Y) to start  ";
+    cout << RESET;
     
     cin>>isReady;
     
     isReady=upperLetter(isReady);
-    // cout<<isReady;
+    // cout << isReady;
 
     if (isReady == 'Y')
     {
@@ -123,17 +123,50 @@ void selectRandomWord()
         getline(file,str);
     }
 
-    // cout<<randWord<<" "<<str;
+    // cout << randWord<<" "<<str;
 
     for (int i = 0; i < strLen(str); i++)
     {
         randSelectedWord[i]=str[i];
-        // cout<<randSelectedWord[i];
+        // cout << randSelectedWord[i];
     }
     
 }
 
 void instructions()
 {
+    
+    cout << CLEAR;
+    showTitle(0);
+    cout << DOUBLESPACE;
+
+    cout << CYAN;
+    cout << "Try to guess the word within 6 tries ";
+    cout << DOUBLESPACE;
+
+    cout << "Each guess must be a valid 5 letter word. Hit the enter button to submit ";
+    cout << DOUBLESPACE;
+
+    cout << "After each guess, the color of the tiles will change to show how close your guess was to the word ";
+    cout << RESET;
+    cout << DOUBLESPACE << endl;
+
+    showTitle(0);
+    cout << RESET;
+    cout << DOUBLESPACE;
+
+    cout << CYAN;
+    cout << "The letter " << RESET;
+    cout << GREENletter << "P" << ","<< "y" << "," << "r" << RESET << CYAN <<  "are in the word and in the correct spot ";
+    cout << DOUBLESPACE;
+    cout << "The letter " << RESET;
+    cout << YELLOWletter << "l" << "," << "w" << "," << "d" << RESET << CYAN << " are in the word but in the wrong spot ";
+    cout << DOUBLESPACE;
+    cout << "The letter " << RESET;
+    cout << REDletter << "a" << "," << "o" << RESET << CYAN << " are not in the word ";
+    cout << RESET;
+    cout << DOUBLESPACE;
+
+
 
 }
