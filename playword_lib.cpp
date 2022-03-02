@@ -5,7 +5,7 @@
 using namespace std;
 
 //defining variable
-char randSelectedWord[6];
+char randSelectedWord[5];
 char tryWord1[5];
 char tryWord2[5];
 char tryWord3[5];
@@ -217,12 +217,7 @@ void keyboard()
 
 void checkTry1()
 {
-    cout << DOUBLESPACE<<LightCyan;
-    cout << "Guess : ";
-    cin >> tryWord1;
-
-    showTitle(0,2000000);
-    cout << DOUBLESPACE;
+    
     // cout << randSelectedWord;
 
     for (int i = 0; i < 5; i++)
@@ -285,8 +280,433 @@ void checkTry1()
     }
 
     cout << DOUBLESPACE;
-    dashMatrix(5);
-    cout << DOUBLESPACE;
+    // dashMatrix(5);
     // cout << randSelectedWord;
+
+}
+
+void checkTry2()
+{
+    for (int i = 0; i < 5; i++)
+    {
+        tryWord2[i] = upperLetter(tryWord2[i]);
+    }
+
+    // cout << tryWord2 << " " << randSelectedWord;
+    
+    if(tryWord2[0] == randSelectedWord[0] && tryWord2[1] == randSelectedWord[1] && tryWord2[2] == randSelectedWord[2] && tryWord2[3] == randSelectedWord[3] && tryWord2[4] == randSelectedWord[4] )
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if(tryWord2[i] == randSelectedWord[i])
+            {
+                cout << GREEN;
+                cout << " " << tryWord2[i] << " ";
+                cout << RESET;
+            }
+        }
+
+        cout << DOUBLESPACE;
+        dashMatrix(4);
+        cout << DOUBLESPACE << CYAN;
+        cout << "You Win!!! The correct word was : ";
+        cout << RESET ;
+
+        for (int i = 0; i < 5; i++)
+        {
+            cout << GREEN;
+            cout << " " << tryWord2[i] << " ";
+            cout << RESET;
+        }
+
+        result = 'Y';
+    }
+    else
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (tryWord2[i] == randSelectedWord[i])
+            {
+                cout << GREEN;
+                cout << " " << tryWord2[i] << " ";
+                cout << RESET;
+            }
+            else if ((tryWord2[i] != randSelectedWord[i]) && (tryWord2[i] == randSelectedWord[0] || tryWord2[i] == randSelectedWord[1] || tryWord2[i] == randSelectedWord[2] || tryWord2[i] == randSelectedWord[3] || tryWord2[i] == randSelectedWord[4]))
+            {
+                cout << YELLOW;
+                cout << " " << tryWord2[i] << " ";
+                cout << RESET;
+            }
+            else 
+            {
+                cout << RED;
+                cout << " " << tryWord2[i] << " ";
+                cout << RESET;
+            }
+        }
+    }
+    cout << DOUBLESPACE;
+}
+
+void checkTry3()
+{
+    for (int i = 0; i < 5; i++)
+    {
+        tryWord3[i] = upperLetter(tryWord3[i]);
+    }
+
+    // cout << tryWord3 << " " << randSelectedWord;
+    
+    if(tryWord3[0] == randSelectedWord[0] && tryWord3[1] == randSelectedWord[1] && tryWord3[2] == randSelectedWord[2] && tryWord3[3] == randSelectedWord[3] && tryWord3[4] == randSelectedWord[4] )
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if(tryWord3[i] == randSelectedWord[i])
+            {
+                cout << GREEN;
+                cout << " " << tryWord3[i] << " ";
+                cout << RESET;
+            }
+        }
+
+        cout << DOUBLESPACE;
+        dashMatrix(3);
+        cout << DOUBLESPACE << CYAN;
+        cout << "You Win!!! The correct word was : ";
+        cout << RESET ;
+
+        for (int i = 0; i < 5; i++)
+        {
+            cout << GREEN;
+            cout << " " << tryWord3[i] << " ";
+            cout << RESET;
+        }
+
+        result = 'Y';
+    }
+    else
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (tryWord3[i] == randSelectedWord[i])
+            {
+                cout << GREEN;
+                cout << " " << tryWord3[i] << " ";
+                cout << RESET;
+            }
+            else if ((tryWord3[i] != randSelectedWord[i]) && (tryWord3[i] == randSelectedWord[0] || tryWord3[i] == randSelectedWord[1] || tryWord3[i] == randSelectedWord[2] || tryWord3[i] == randSelectedWord[3] || tryWord3[i] == randSelectedWord[4]))
+            {
+                cout << YELLOW;
+                cout << " " << tryWord3[i] << " ";
+                cout << RESET;
+            }
+            else 
+            {
+                cout << RED;
+                cout << " " << tryWord3[i] << " ";
+                cout << RESET;
+            }
+        }
+    }
+    cout << DOUBLESPACE;
+}
+
+void checkTry4()
+{
+    for (int i = 0; i < 5; i++)
+    {
+        tryWord4[i] = upperLetter(tryWord4[i]);
+    }
+
+    // cout << tryWord4 << " " << randSelectedWord;
+    
+    if(tryWord4[0] == randSelectedWord[0] && tryWord4[1] == randSelectedWord[1] && tryWord4[2] == randSelectedWord[2] && tryWord4[3] == randSelectedWord[3] && tryWord4[4] == randSelectedWord[4] )
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if(tryWord4[i] == randSelectedWord[i])
+            {
+                cout << GREEN;
+                cout << " " << tryWord4[i] << " ";
+                cout << RESET;
+            }
+        }
+
+        cout << DOUBLESPACE;
+        dashMatrix(2);
+        cout << DOUBLESPACE << CYAN;
+        cout << "You Win!!! The correct word was : ";
+        cout << RESET ;
+
+        for (int i = 0; i < 5; i++)
+        {
+            cout << GREEN;
+            cout << " " << tryWord4[i] << " ";
+            cout << RESET;
+        }
+
+        result = 'Y';
+    }
+    else
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (tryWord4[i] == randSelectedWord[i])
+            {
+                cout << GREEN;
+                cout << " " << tryWord4[i] << " ";
+                cout << RESET;
+            }
+            else if ((tryWord4[i] != randSelectedWord[i]) && (tryWord4[i] == randSelectedWord[0] || tryWord4[i] == randSelectedWord[1] || tryWord4[i] == randSelectedWord[2] || tryWord4[i] == randSelectedWord[3] || tryWord4[i] == randSelectedWord[4]))
+            {
+                cout << YELLOW;
+                cout << " " << tryWord4[i] << " ";
+                cout << RESET;
+            }
+            else 
+            {
+                cout << RED;
+                cout << " " << tryWord4[i] << " ";
+                cout << RESET;
+            }
+        }
+    }
+    cout << DOUBLESPACE;
+}
+
+void checkTry5()
+{
+    for (int i = 0; i < 5; i++)
+    {
+        tryWord5[i] = upperLetter(tryWord5[i]);
+    }
+
+    // cout << tryWord5 << " " << randSelectedWord;
+    
+    if(tryWord5[0] == randSelectedWord[0] && tryWord5[1] == randSelectedWord[1] && tryWord5[2] == randSelectedWord[2] && tryWord5[3] == randSelectedWord[3] && tryWord5[4] == randSelectedWord[4] )
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if(tryWord5[i] == randSelectedWord[i])
+            {
+                cout << GREEN;
+                cout << " " << tryWord5[i] << " ";
+                cout << RESET;
+            }
+        }
+
+        cout << DOUBLESPACE;
+        dashMatrix(1);
+        cout << DOUBLESPACE << CYAN;
+        cout << "You Win!!! The correct word was : ";
+        cout << RESET ;
+
+        for (int i = 0; i < 5; i++)
+        {
+            cout << GREEN;
+            cout << " " << tryWord5[i] << " ";
+            cout << RESET;
+        }
+
+        result = 'Y';
+    }
+    else
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (tryWord5[i] == randSelectedWord[i])
+            {
+                cout << GREEN;
+                cout << " " << tryWord5[i] << " ";
+                cout << RESET;
+            }
+            else if ((tryWord5[i] != randSelectedWord[i]) && (tryWord5[i] == randSelectedWord[0] || tryWord5[i] == randSelectedWord[1] || tryWord5[i] == randSelectedWord[2] || tryWord5[i] == randSelectedWord[3] || tryWord5[i] == randSelectedWord[4]))
+            {
+                cout << YELLOW;
+                cout << " " << tryWord5[i] << " ";
+                cout << RESET;
+            }
+            else 
+            {
+                cout << RED;
+                cout << " " << tryWord5[i] << " ";
+                cout << RESET;
+            }
+        }
+    }
+    cout << DOUBLESPACE;
+}
+
+void checkTry6()
+{
+    for (int i = 0; i < 5; i++)
+    {
+        tryWord6[i] = upperLetter(tryWord6[i]);
+    }
+
+    // cout << tryWord6 << " " << randSelectedWord;
+    
+    if(tryWord6[0] == randSelectedWord[0] && tryWord6[1] == randSelectedWord[1] && tryWord6[2] == randSelectedWord[2] && tryWord6[3] == randSelectedWord[3] && tryWord6[4] == randSelectedWord[4] )
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if(tryWord6[i] == randSelectedWord[i])
+            {
+                cout << GREEN;
+                cout << " " << tryWord6[i] << " ";
+                cout << RESET;
+            }
+        }
+
+        cout << DOUBLESPACE;
+        cout << DOUBLESPACE << CYAN;
+        cout << "You Win!!! The correct word was : ";
+        cout << RESET ;
+
+        for (int i = 0; i < 5; i++)
+        {
+            cout << GREEN;
+            cout << " " << tryWord6[i] << " ";
+            cout << RESET;
+        }
+
+        result = 'Y';
+    }
+    else
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (tryWord6[i] == randSelectedWord[i])
+            {
+                cout << GREEN;
+                cout << " " << tryWord6[i] << " ";
+                cout << RESET;
+            }
+            else if ((tryWord6[i] != randSelectedWord[i]) && (tryWord6[i] == randSelectedWord[0] || tryWord6[i] == randSelectedWord[1] || tryWord6[i] == randSelectedWord[2] || tryWord6[i] == randSelectedWord[3] || tryWord6[i] == randSelectedWord[4]))
+            {
+                cout << YELLOW;
+                cout << " " << tryWord6[i] << " ";
+                cout << RESET;
+            }
+            else 
+            {
+                cout << RED;
+                cout << " " << tryWord6[i] << " ";
+                cout << RESET;
+            }
+        }
+    }
+    cout << DOUBLESPACE;
+}
+
+void checkTry()
+{
+    showTitle(0,5000000);
+    dashMatrix(6);
+    keyboard();
+    
+    //starting guessing
+    cout << DOUBLESPACE<<LightCyan;
+    cout << "Guess : ";
+    cin >> tryWord1;
+    cout << RESET;
+
+    showTitle(0,2000000);
+    cout << DOUBLESPACE;
+    checkTry1();
+
+    if (result == 'N')
+    {
+        dashMatrix(5);
+        cout << DOUBLESPACE<<LightCyan;
+        keyboard();
+        cout << "Guess : ";
+        cin >> tryWord2;
+        cout << RESET;
+
+        cout << CLEAR;
+        showTitle(0,500000);
+        cout << endl;
+        checkTry1();
+        checkTry2();
+
+    }
+
+    if (result == 'N')
+    {
+        dashMatrix(4);
+        cout << DOUBLESPACE<<LightCyan;
+        keyboard();
+        cout << "Guess : ";
+        cin >> tryWord3;
+        cout << RESET;
+
+        cout << CLEAR;
+        showTitle(0,500000);
+        cout << endl;
+        checkTry1();
+        checkTry2();
+        checkTry3();
+
+    }
+
+    if (result == 'N')
+    {
+        dashMatrix(3);
+        cout << DOUBLESPACE<<LightCyan;
+        keyboard();
+        cout << "Guess : ";
+        cin >> tryWord4;
+        cout << RESET;
+
+        cout << CLEAR;
+        showTitle(0,500000);
+        cout << endl;
+        checkTry1();
+        checkTry2();
+        checkTry3();
+        checkTry4();
+
+    }
+    
+    if (result == 'N')
+    {
+        dashMatrix(2);
+        cout << DOUBLESPACE<<LightCyan;
+        keyboard();
+        cout << "Guess : ";
+        cin >> tryWord5;
+        cout << RESET;
+
+        cout << CLEAR;
+        showTitle(0,500000);
+        cout << endl;
+        checkTry1();
+        checkTry2();
+        checkTry3();
+        checkTry4();
+        checkTry5();
+
+    }
+
+    if (result == 'N')
+    {
+        dashMatrix(1);
+        cout << DOUBLESPACE<<LightCyan;
+        keyboard();
+        cout << "Guess : ";
+        cin >> tryWord6;
+        cout << RESET;
+
+        cout << CLEAR;
+        showTitle(0,500000);
+        cout << endl;
+        checkTry1();
+        checkTry2();
+        checkTry3();
+        checkTry4();
+        checkTry5();
+        checkTry6();
+    }
 
 }

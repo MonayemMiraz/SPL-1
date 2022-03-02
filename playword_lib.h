@@ -15,16 +15,17 @@ using namespace std;
 #define LightCyan  "\033[96m"
 
 // this is the randomly selected word
-// extern char randSelectedWord[5];
+extern char randSelectedWord[5];
 
 // here guessWord is the word that the user is trying to guess
 // A user can only guess 6 times
-// extern char tryWord1[5];
-// extern char tryWord2[5];
-// extern char tryWord3[5];
-// extern char tryWord4[5];
-// extern char tryWord5[5];
-// extern char tryWord6[5];
+extern char tryWord1[5];
+extern char tryWord2[5];
+extern char tryWord3[5];
+extern char tryWord4[5];
+extern char tryWord5[5];
+extern char tryWord6[5];
+extern char result;
 
 //score storing variables
 // extern int score;
@@ -40,3 +41,9 @@ void instructions();
 void dashMatrix(int n);
 void keyboard();
 void checkTry1();
+void checkTry2();
+void checkTry3();
+void checkTry4();
+void checkTry5();
+void checkTry6();
+void checkTry();

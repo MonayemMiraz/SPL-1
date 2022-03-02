@@ -21,12 +21,8 @@ int main()
     selectRandomWord();
 
     instructions();
-    
-    dashMatrix(6);
-    keyboard();
-    checkTry1();
 
-
+    checkTry();
 
 }
 
