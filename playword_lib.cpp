@@ -1,9 +1,11 @@
 #include<bits/stdc++.h>
+#include<time.h>
+#include<fstream>
 #include"playword_lib.h"
 using namespace std;
 
 //defining variable
-char randSelectedWord[5];
+char randSelectedWord[6];
 char tryWord1[5];
 char tryWord2[5];
 char tryWord3[5];
@@ -11,6 +13,7 @@ char tryWord4[5];
 char tryWord5[5];
 char tryWord6[5];
 int  score=0;
+char result='N';
 
 char upperLetter(char ch)
 {
@@ -37,7 +40,7 @@ void showTitle(int timeForGap,int timeForClear )
 {   
     my_Sleep(timeForClear);
     cout << CLEAR;
-    cout << "\n\n          ";
+    cout << "\n\n            ";
     cout << GREEN<<BOLD<<" P ";
     cout << RESET;
     my_Sleep(timeForGap);
@@ -127,11 +130,25 @@ void selectRandomWord()
 
     // cout << randWord<<" "<<str;
 
-    for (int i = 0; i < strLen(str); i++)
+    // for (int i = 0; i < 6; i++)
+    // {
+    //     randSelectedWord[i]=str[i];
+    //     cout << randSelectedWord[i];
+    // }
+    randSelectedWord[0]=str[0];
+    randSelectedWord[1]=str[1];
+    randSelectedWord[2]=str[2];
+    randSelectedWord[3]=str[3];
+    randSelectedWord[4]=str[4];
+
+    for (int i = 0; i < 5; i++)
     {
-        randSelectedWord[i]=str[i];
-        // cout << randSelectedWord[i];
+         randSelectedWord[i]=upperLetter(randSelectedWord[i]);
     }
+    
+
+    // cout << randSelectedWord;
+    // my_Sleep(10000000);
     
 }
 
@@ -173,7 +190,6 @@ void instructions()
 
 void dashMatrix(int n)
 {
-    
     for (int i = 0; i < n; i++)
     {
       for (int j = 0; j < 5; j++)
@@ -196,5 +212,81 @@ void keyboard()
   cout << DOUBLESPACE;
   cout << "     " << " Z " << " X " << " C " << " V " << " B " << " N " << " M ";
   cout << DOUBLESPACE;
+
+}
+
+void checkTry1()
+{
+    cout << DOUBLESPACE<<LightCyan;
+    cout << "Guess : ";
+    cin >> tryWord1;
+
+    showTitle(0,2000000);
+    cout << DOUBLESPACE;
+    // cout << randSelectedWord;
+
+    for (int i = 0; i < 5; i++)
+    {
+        tryWord1[i] = upperLetter(tryWord1[i]);
+    }
+
+    // cout << tryWord1 << " " << randSelectedWord;
+    
+    if(tryWord1[0] == randSelectedWord[0] && tryWord1[1] == randSelectedWord[1] && tryWord1[2] == randSelectedWord[2] && tryWord1[3] == randSelectedWord[3] && tryWord1[4] == randSelectedWord[4] )
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if(tryWord1[i] == randSelectedWord[i])
+            {
+                cout << GREEN;
+                cout << " " << tryWord1[i] << " ";
+                cout << RESET;
+            }
+        }
+
+        cout << DOUBLESPACE;
+        dashMatrix(5);
+        cout << DOUBLESPACE << CYAN;
+        cout << "You Win!!! The correct word was : ";
+        cout << RESET ;
+
+        for (int i = 0; i < 5; i++)
+        {
+            cout << GREEN;
+            cout << " " << tryWord1[i] << " ";
+            cout << RESET;
+        }
+
+        result = 'Y';
+    }
+    else
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (tryWord1[i] == randSelectedWord[i])
+            {
+                cout << GREEN;
+                cout << " " << tryWord1[i] << " ";
+                cout << RESET;
+            }
+            else if ((tryWord1[i] != randSelectedWord[i]) && (tryWord1[i] == randSelectedWord[0] || tryWord1[i] == randSelectedWord[1] || tryWord1[i] == randSelectedWord[2] || tryWord1[i] == randSelectedWord[3] || tryWord1[i] == randSelectedWord[4]))
+            {
+                cout << YELLOW;
+                cout << " " << tryWord1[i] << " ";
+                cout << RESET;
+            }
+            else 
+            {
+                cout << RED;
+                cout << " " << tryWord1[i] << " ";
+                cout << RESET;
+            }
+        }
+    }
+
+    cout << DOUBLESPACE;
+    dashMatrix(5);
+    cout << DOUBLESPACE;
+    // cout << randSelectedWord;
 
 }

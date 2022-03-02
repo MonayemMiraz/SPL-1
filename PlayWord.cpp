@@ -24,6 +24,7 @@ int main()
     
     dashMatrix(6);
     keyboard();
+    checkTry1();
 
 
 
