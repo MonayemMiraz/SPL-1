@@ -155,7 +155,7 @@ void selectRandomWord()
 void instructions()
 {
     
-    showTitle(0,1000000);
+    showTitle(0,600000);
     cout << DOUBLESPACE;
 
     cout << CYAN;
@@ -169,19 +169,19 @@ void instructions()
     cout << RESET;
     cout << DOUBLESPACE << endl;
 
-    showTitle(0,10000000);
+    showTitle(0,5000000);
     cout << RESET;
     cout << DOUBLESPACE;
 
     cout << CYAN;
     cout << "-> The letter " << RESET;
-    cout << GREENletter << "P" << ","<< "y" << "," << "r" << RESET << CYAN <<  " are in the word and in the correct spot ";
+    cout << GREEN << " P " << RESET << "," << GREEN <<  " y " << RESET << "," << GREEN << " r " << RESET << CYAN <<  " are in the word and in the correct spot ";
     cout << DOUBLESPACE;
     cout << "-> The letter " << RESET;
-    cout << YELLOWletter << "l" << "," << "w" << "," << "d" << RESET << CYAN << " are in the word but in the wrong spot ";
+    cout << YELLOW << " l " << RESET << "," << YELLOW << " w " << RESET << "," << YELLOW << " d " << RESET << CYAN << " are in the word but in the wrong spot ";
     cout << DOUBLESPACE;
     cout << "-> The letter " << RESET;
-    cout << REDletter << "a" << "," << "o" << RESET << CYAN << " are not in the word ";
+    cout << RED << " a " << RESET << "," << RED << " o " << RESET << CYAN << " are not in the word ";
     cout << RESET;
     cout << DOUBLESPACE << DOUBLESPACE;
     my_Sleep(5000000);
@@ -1225,4 +1225,21 @@ void checkTry()
         checkTry6();
     }
 
+}
+
+void PlayWord()
+{
+    showTitle(750000,100000);
+    showTitle(0,1000000);
+
+    if(!shouldStart())
+    {
+        exit(0);
+    }
+    
+    selectRandomWord();
+
+    instructions();
+
+    checkTry();
 }

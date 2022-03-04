@@ -10,19 +10,7 @@ using namespace std;
 int main()
 {
     
-    showTitle(750000,100000);
-    showTitle(0,1000000);
-
-    if(!shouldStart())
-    {
-        return 0;
-    }
-    
-    selectRandomWord();
-
-    instructions();
-
-    checkTry();
+    PlayWord();
 
 }
 
