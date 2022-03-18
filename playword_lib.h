@@ -1,4 +1,6 @@
 #pragma
+#include<bits/stdc++.h>
+#include<string.h>
 using namespace std;
 
 #define CLEAR "\e[1;1H\e[2J"
@@ -36,15 +38,16 @@ void my_Sleep(unsigned long ms);
 void showTitle(int timeForGap, int timeForClear);
 bool shouldStart();
 void selectRandomWord();
-int strLen(std::string str);
+int strLen(string str);
 void instructions();
+void modKeyboard();
 void dashMatrix(int n);
 void keyboard();
+void checkTry();
 void checkTry1();
 void checkTry2();
 void checkTry3();
 void checkTry4();
 void checkTry5();
 void checkTry6();
-void checkTry();
 void PlayWord();

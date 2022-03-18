@@ -2,6 +2,8 @@
 #include<time.h>
 #include<fstream>
 #include"playword_lib.h"
+#include "stringMatch.cpp"
+
 using namespace std;
 
 //defining variable
@@ -130,16 +132,16 @@ void selectRandomWord()
 
     // cout << randWord<<" "<<str;
 
-    // for (int i = 0; i < 6; i++)
-    // {
-    //     randSelectedWord[i]=str[i];
-    //     cout << randSelectedWord[i];
-    // }
-    randSelectedWord[0]=str[0];
-    randSelectedWord[1]=str[1];
-    randSelectedWord[2]=str[2];
-    randSelectedWord[3]=str[3];
-    randSelectedWord[4]=str[4];
+    for (int i = 0; i < strLen(str); i++)
+    {
+        randSelectedWord[i]=str[i];
+        cout << randSelectedWord[i];
+    }
+    // randSelectedWord[0]=str[0];
+    // randSelectedWord[1]=str[1];
+    // randSelectedWord[2]=str[2];
+    // randSelectedWord[3]=str[3];
+    // randSelectedWord[4]=str[4];
 
     for (int i = 0; i < 5; i++)
     {
@@ -743,22 +745,34 @@ void checkTry1()
 
     // cout << tryWord1 << " " << randSelectedWord;
     
-    if(tryWord1[0] == randSelectedWord[0] && tryWord1[1] == randSelectedWord[1] && tryWord1[2] == randSelectedWord[2] && tryWord1[3] == randSelectedWord[3] && tryWord1[4] == randSelectedWord[4] )
+    // if(tryWord1[0] == randSelectedWord[0] && tryWord1[1] == randSelectedWord[1] && tryWord1[2] == randSelectedWord[2] && tryWord1[3] == randSelectedWord[3] && tryWord1[4] == randSelectedWord[4] )
+    // {
+    //     for (int i = 0; i < 5; i++)
+    //     {
+    //         if(tryWord1[i] == randSelectedWord[i])
+    //         {
+    //             cout << GREEN;
+    //             cout << " " << tryWord1[i] << " ";
+    //             cout << RESET;
+    //         }
+    //     }
+    if(editDistance(randSelectedWord,tryWord1)==0)
     {
+
         for (int i = 0; i < 5; i++)
         {
             if(tryWord1[i] == randSelectedWord[i])
             {
-                cout << GREEN;
-                cout << " " << tryWord1[i] << " ";
-                cout << RESET;
+                 cout << GREEN;
+                 cout << " " << tryWord1[i] << " ";
+                 cout << RESET;
             }
         }
 
         cout << DOUBLESPACE;
         dashMatrix(5);
         cout << DOUBLESPACE << CYAN;
-        cout << "You Win!!! The correct word was : ";
+        cout << "You Win!!! The correct word is : ";
         cout << RESET ;
 
         for (int i = 0; i < 5; i++)
@@ -810,33 +824,46 @@ void checkTry2()
 
     // cout << tryWord2 << " " << randSelectedWord;
     
-    if(tryWord2[0] == randSelectedWord[0] && tryWord2[1] == randSelectedWord[1] && tryWord2[2] == randSelectedWord[2] && tryWord2[3] == randSelectedWord[3] && tryWord2[4] == randSelectedWord[4] )
+    // if(tryWord2[0] == randSelectedWord[0] && tryWord2[1] == randSelectedWord[1] && tryWord2[2] == randSelectedWord[2] && tryWord2[3] == randSelectedWord[3] && tryWord2[4] == randSelectedWord[4] )
+    // {
+    //     for (int i = 0; i < 5; i++)
+    //     {
+    //         if(tryWord2[i] == randSelectedWord[i])
+    //         {
+    //             cout << GREEN;
+    //             cout << " " << tryWord2[i] << " ";
+    //             cout << RESET;
+    //         }
+    //     }
+    if(editDistance(randSelectedWord,tryWord1)==0)
     {
+
         for (int i = 0; i < 5; i++)
         {
-            if(tryWord2[i] == randSelectedWord[i])
+            if(tryWord1[i] == randSelectedWord[i])
             {
-                cout << GREEN;
-                cout << " " << tryWord2[i] << " ";
-                cout << RESET;
+                 cout << GREEN;
+                 cout << " " << tryWord1[i] << " ";
+                 cout << RESET;
             }
         }
 
         cout << DOUBLESPACE;
         dashMatrix(4);
         cout << DOUBLESPACE << CYAN;
-        cout << "You Win!!! The correct word was : ";
+        cout << "You Win!!! The correct word is : ";
         cout << RESET ;
 
         for (int i = 0; i < 5; i++)
         {
             cout << GREEN;
-            cout << " " << tryWord2[i] << " ";
+            cout << " " << tryWord1[i] << " ";
             cout << RESET;
         }
 
         result = 'Y';
     }
+    
     else
     {
         for (int i = 0; i < 5; i++)
@@ -873,28 +900,29 @@ void checkTry3()
 
     // cout << tryWord3 << " " << randSelectedWord;
     
-    if(tryWord3[0] == randSelectedWord[0] && tryWord3[1] == randSelectedWord[1] && tryWord3[2] == randSelectedWord[2] && tryWord3[3] == randSelectedWord[3] && tryWord3[4] == randSelectedWord[4] )
+    if(editDistance(randSelectedWord,tryWord1)==0)
     {
+
         for (int i = 0; i < 5; i++)
         {
-            if(tryWord3[i] == randSelectedWord[i])
+            if(tryWord1[i] == randSelectedWord[i])
             {
-                cout << GREEN;
-                cout << " " << tryWord3[i] << " ";
-                cout << RESET;
+                 cout << GREEN;
+                 cout << " " << tryWord1[i] << " ";
+                 cout << RESET;
             }
         }
 
         cout << DOUBLESPACE;
         dashMatrix(3);
         cout << DOUBLESPACE << CYAN;
-        cout << "You Win!!! The correct word was : ";
+        cout << "You Win!!! The correct word is : ";
         cout << RESET ;
 
         for (int i = 0; i < 5; i++)
         {
             cout << GREEN;
-            cout << " " << tryWord3[i] << " ";
+            cout << " " << tryWord1[i] << " ";
             cout << RESET;
         }
 
@@ -936,28 +964,29 @@ void checkTry4()
 
     // cout << tryWord4 << " " << randSelectedWord;
     
-    if(tryWord4[0] == randSelectedWord[0] && tryWord4[1] == randSelectedWord[1] && tryWord4[2] == randSelectedWord[2] && tryWord4[3] == randSelectedWord[3] && tryWord4[4] == randSelectedWord[4] )
+    if(editDistance(randSelectedWord,tryWord1)==0)
     {
+
         for (int i = 0; i < 5; i++)
         {
-            if(tryWord4[i] == randSelectedWord[i])
+            if(tryWord1[i] == randSelectedWord[i])
             {
-                cout << GREEN;
-                cout << " " << tryWord4[i] << " ";
-                cout << RESET;
+                 cout << GREEN;
+                 cout << " " << tryWord1[i] << " ";
+                 cout << RESET;
             }
         }
 
         cout << DOUBLESPACE;
         dashMatrix(2);
         cout << DOUBLESPACE << CYAN;
-        cout << "You Win!!! The correct word was : ";
+        cout << "You Win!!! The correct word is : ";
         cout << RESET ;
 
         for (int i = 0; i < 5; i++)
         {
             cout << GREEN;
-            cout << " " << tryWord4[i] << " ";
+            cout << " " << tryWord1[i] << " ";
             cout << RESET;
         }
 
@@ -999,28 +1028,29 @@ void checkTry5()
 
     // cout << tryWord5 << " " << randSelectedWord;
     
-    if(tryWord5[0] == randSelectedWord[0] && tryWord5[1] == randSelectedWord[1] && tryWord5[2] == randSelectedWord[2] && tryWord5[3] == randSelectedWord[3] && tryWord5[4] == randSelectedWord[4] )
+    if(editDistance(randSelectedWord,tryWord1)==0)
     {
+
         for (int i = 0; i < 5; i++)
         {
-            if(tryWord5[i] == randSelectedWord[i])
+            if(tryWord1[i] == randSelectedWord[i])
             {
-                cout << GREEN;
-                cout << " " << tryWord5[i] << " ";
-                cout << RESET;
+                 cout << GREEN;
+                 cout << " " << tryWord1[i] << " ";
+                 cout << RESET;
             }
         }
 
         cout << DOUBLESPACE;
         dashMatrix(1);
         cout << DOUBLESPACE << CYAN;
-        cout << "You Win!!! The correct word was : ";
+        cout << "You Win!!! The correct word is : ";
         cout << RESET ;
 
         for (int i = 0; i < 5; i++)
         {
             cout << GREEN;
-            cout << " " << tryWord5[i] << " ";
+            cout << " " << tryWord1[i] << " ";
             cout << RESET;
         }
 
@@ -1062,27 +1092,29 @@ void checkTry6()
 
     // cout << tryWord6 << " " << randSelectedWord;
     
-    if(tryWord6[0] == randSelectedWord[0] && tryWord6[1] == randSelectedWord[1] && tryWord6[2] == randSelectedWord[2] && tryWord6[3] == randSelectedWord[3] && tryWord6[4] == randSelectedWord[4] )
+    if(editDistance(randSelectedWord,tryWord1)==0)
     {
+
         for (int i = 0; i < 5; i++)
         {
-            if(tryWord6[i] == randSelectedWord[i])
+            if(tryWord1[i] == randSelectedWord[i])
             {
-                cout << GREEN;
-                cout << " " << tryWord6[i] << " ";
-                cout << RESET;
+                 cout << GREEN;
+                 cout << " " << tryWord1[i] << " ";
+                 cout << RESET;
             }
         }
 
         cout << DOUBLESPACE;
+        dashMatrix(5);
         cout << DOUBLESPACE << CYAN;
-        cout << "You Win!!! The correct word was : ";
+        cout << "You Win!!! The correct word is : ";
         cout << RESET ;
 
         for (int i = 0; i < 5; i++)
         {
             cout << GREEN;
-            cout << " " << tryWord6[i] << " ";
+            cout << " " << tryWord1[i] << " ";
             cout << RESET;
         }
 
