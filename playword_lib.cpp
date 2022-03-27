@@ -16,6 +16,7 @@ char tryWord5[5];
 char tryWord6[5];
 int  score=0;
 char result='N';
+char Alphabates[26]={'Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M'};
 
 char upperLetter(char ch)
 {
@@ -135,7 +136,7 @@ void selectRandomWord()
     for (int i = 0; i < strLen(str); i++)
     {
         randSelectedWord[i]=str[i];
-        cout << randSelectedWord[i];
+        cout << randSelectedWord[i]; //MUST be commented
     }
     // randSelectedWord[0]=str[0];
     // randSelectedWord[1]=str[1];
@@ -145,7 +146,7 @@ void selectRandomWord()
 
     for (int i = 0; i < 5; i++)
     {
-         randSelectedWord[i]=upperLetter(randSelectedWord[i]);
+        randSelectedWord[i]=upperLetter(randSelectedWord[i]);
     }
     
 
@@ -279,457 +280,53 @@ bool notPresent(char x)
     return (notExist && tryExist);
 }
 
+void printConditionKyeboard(char x){
+    
+    if (rightPosition(x))
+    {
+        cout << GREEN << " " << x << " " << RESET;
+    }
+    else if (wrongPosition(x))
+    {
+        cout << YELLOW << " " << x << " " << RESET;
+    }
+    else if (notPresent(x))
+    {
+        cout << RED << " " << x << " " << RESET;
+    }
+    else
+    {
+        cout << LightCyan << " " << x << " " << RESET;
+    }
+
+}
+
 void modKeyboard()
 {
-    if (rightPosition('Q'))
-    {
-        cout << GREEN << " Q " << RESET;
-    }
-    else if (wrongPosition('Q'))
-    {
-        cout << YELLOW << " Q " << RESET;
-    }
-    else if (notPresent('Q'))
-    {
-        cout << RED << " Q " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " Q " << RESET;
-    }
 
-    if (rightPosition('W'))
+    for (int i = 0; i < 10; i++)
     {
-        cout << GREEN << " W " << RESET;
-    }
-    else if (wrongPosition('W'))
-    {
-        cout << YELLOW << " W " << RESET;
-    }
-    else if (notPresent('W'))
-    {
-        cout << RED << " W " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " W " << RESET;
-    }
-
-    if (rightPosition('E'))
-    {
-        cout << GREEN << " E " << RESET;
-    }
-    else if (wrongPosition('E'))
-    {
-        cout << YELLOW << " E " << RESET;
-    }
-    else if (notPresent('E'))
-    {
-        cout << RED << " E " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " E " << RESET;
-    }
-
-    if (rightPosition('R'))
-    {
-        cout << GREEN << " R " << RESET;
-    }
-    else if (wrongPosition('R'))
-    {
-        cout << YELLOW << " R " << RESET;
-    }
-    else if (notPresent('R'))
-    {
-        cout << RED << " R " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " R " << RESET;
-    }
-
-    if (rightPosition('T'))
-    {
-        cout << GREEN << " T " << RESET;
-    }
-    else if (wrongPosition('T'))
-    {
-        cout << YELLOW << " T " << RESET;
-    }
-    else if (notPresent('T'))
-    {
-        cout << RED << " T " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " T " << RESET;
-    }
-
-    if (rightPosition('Y'))
-    {
-        cout << GREEN << " Y " << RESET;
-    }
-    else if (wrongPosition('Y'))
-    {
-        cout << YELLOW << " Y " << RESET;
-    }
-    else if (notPresent('Y'))
-    {
-        cout << RED << " Y " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " Y " << RESET;
-    }
-
-    if (rightPosition('U'))
-    {
-        cout << GREEN << " U " << RESET;
-    }
-    else if (wrongPosition('U'))
-    {
-        cout << YELLOW << " U " << RESET;
-    }
-    else if (notPresent('U'))
-    {
-        cout << RED << " U " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " U " << RESET;
-    }
-
-    if (rightPosition('I'))
-    {
-        cout << GREEN << " I " << RESET;
-    }
-    else if (wrongPosition('I'))
-    {
-        cout << YELLOW << " I " << RESET;
-    }
-    else if (notPresent('I'))
-    {
-        cout << RED << " I " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " I " << RESET;
-    }
-
-    if (rightPosition('O'))
-    {
-        cout << GREEN << " O " << RESET;
-    }
-    else if (wrongPosition('O'))
-    {
-        cout << YELLOW << " O " << RESET;
-    }
-    else if (notPresent('O'))
-    {
-        cout << RED << " O " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " O " << RESET;
-    }
-
-    if (rightPosition('P'))
-    {
-        cout << GREEN << " P " << RESET;
-    }
-    else if (wrongPosition('P'))
-    {
-        cout << YELLOW << " P " << RESET;
-    }
-    else if (notPresent('P'))
-    {
-        cout << RED << " P " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " P " << RESET;
+        printConditionKyeboard(Alphabates[i]);
     }
 
     cout << DOUBLESPACE;
     cout << "  ";
 
-    if (rightPosition('A'))
+    for (int i = 10; i < 19; i++)
     {
-        cout << GREEN << " A " << RESET;
+        printConditionKyeboard(Alphabates[i]);
     }
-    else if (wrongPosition('A'))
-    {
-        cout << YELLOW << " A " << RESET;
-    }
-    else if (notPresent('A'))
-    {
-        cout << RED << " A " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " A " << RESET;
-    }
-
-    if (rightPosition('S'))
-    {
-        cout << GREEN << " S " << RESET;
-    }
-    else if (wrongPosition('S'))
-    {
-        cout << YELLOW << " S " << RESET;
-    }
-    else if (notPresent('S'))
-    {
-        cout << RED << " S " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " S " << RESET;
-    }
-
-    if (rightPosition('D'))
-    {
-        cout << GREEN << " D " << RESET;
-    }
-    else if (wrongPosition('D'))
-    {
-        cout << YELLOW << " D " << RESET;
-    }
-    else if (notPresent('D'))
-    {
-        cout << RED << " D " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " D " << RESET;
-    }
-
-    if (rightPosition('F'))
-    {
-        cout << GREEN << " F " << RESET;
-    }
-    else if (wrongPosition('F'))
-    {
-        cout << YELLOW << " F " << RESET;
-    }
-    else if (notPresent('F'))
-    {
-        cout << RED << " F " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " F " << RESET;
-    }
-
-    if (rightPosition('G'))
-    {
-        cout << GREEN << " G " << RESET;
-    }
-    else if (wrongPosition('G'))
-    {
-        cout << YELLOW << " G " << RESET;
-    }
-    else if (notPresent('G'))
-    {
-        cout << RED << " G " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " G " << RESET;
-    }
-
-    if (rightPosition('H'))
-    {
-        cout << GREEN << " H " << RESET;
-    }
-    else if (wrongPosition('H'))
-    {
-        cout << YELLOW << " H " << RESET;
-    }
-    else if (notPresent('H'))
-    {
-        cout << RED << " H " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " H " << RESET;
     
-    }
-    if (rightPosition('J'))
-    {
-        cout << GREEN << " J " << RESET;
-    }
-    else if (wrongPosition('J'))
-    {
-        cout << YELLOW << " J " << RESET;
-    }
-    else if (notPresent('J'))
-    {
-        cout << RED << " J " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " J " << RESET;
-    }
-
-    if (rightPosition('K'))
-    {
-        cout << GREEN << " K " << RESET;
-    }
-    else if (wrongPosition('K'))
-    {
-        cout << YELLOW << " K " << RESET;
-    }
-    else if (notPresent('K'))
-    {
-        cout << RED << " K " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " K " << RESET;
-    }
-
-    if (rightPosition('L'))
-    {
-        cout << GREEN << " L " << RESET;
-    }
-    else if (wrongPosition('L'))
-    {
-        cout << YELLOW << " L " << RESET;
-    }
-    else if (notPresent('L'))
-    {
-        cout << RED << " L " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " L " << RESET;
-    }
-
     cout << DOUBLESPACE;
     cout << "     ";
 
-    if (rightPosition('Z'))
+    for (int i = 19; i < 26; i++)
     {
-        cout << GREEN << " Z " << RESET;
-    }
-    else if (wrongPosition('Z'))
-    {
-        cout << YELLOW << " Z " << RESET;
-    }
-    else if (notPresent('Z'))
-    {
-        cout << RED << " Z " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " Z " << RESET;
+        printConditionKyeboard(Alphabates[i]);
     }
 
-    if (rightPosition('X'))
-    {
-        cout << GREEN << " X " << RESET;
-    }
-    else if (wrongPosition('X'))
-    {
-        cout << YELLOW << " X " << RESET;
-    }
-    else if (notPresent('X'))
-    {
-        cout << RED << " X " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " X " << RESET;
-    }
-
-    if (rightPosition('C'))
-    {
-        cout << GREEN << " C " << RESET;
-    }
-    else if (wrongPosition('C'))
-    {
-        cout << YELLOW << " C " << RESET;
-    }
-    else if (notPresent('C'))
-    {
-        cout << RED << " C " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " C " << RESET;
-    }
-
-    if (rightPosition('V'))
-    {
-        cout << GREEN << " V " << RESET;
-    }
-    else if (wrongPosition('V'))
-    {
-        cout << YELLOW << " V " << RESET;
-    }
-    else if (notPresent('V'))
-    {
-        cout << RED << " V " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " V " << RESET;
-    }
-
-    if (rightPosition('B'))
-    {
-        cout << GREEN << " B " << RESET;
-    }
-    else if (wrongPosition('B'))
-    {
-        cout << YELLOW << " B " << RESET;
-    }
-    else if (notPresent('B'))
-    {
-        cout << RED << " B " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " B " << RESET;
-    }
-
-    if (rightPosition('N'))
-    {
-        cout << GREEN << " N " << RESET;
-    }
-    else if (wrongPosition('N'))
-    {
-        cout << YELLOW << " N " << RESET;
-    }
-    else if (notPresent('N'))
-    {
-        cout << RED << " N " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " N " << RESET;
-    }
-
-    if (rightPosition('M'))
-    {
-        cout << GREEN << " M " << RESET;
-    }
-    else if (wrongPosition('M'))
-    {
-        cout << YELLOW << " M " << RESET;
-    }
-    else if (notPresent('M'))
-    {
-        cout << RED << " M " << RESET;
-    }
-    else
-    {
-        cout << LightCyan << " M " << RESET;
-    }
-    
     cout << DOUBLESPACE;
+
 }
 
 
