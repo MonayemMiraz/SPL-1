@@ -133,7 +133,7 @@ void selectRandomWord()
     for (int i = 0; i < strLen(str); i++)
     {
         randSelectedWord[i] = str[i];
-        cout << randSelectedWord[i]; // MUST be commented
+        // cout << randSelectedWord[i]; // MUST be commented
     }
     // randSelectedWord[0]=str[0];
     // randSelectedWord[1]=str[1];
