@@ -3,6 +3,68 @@
 
 using namespace std;
 
+#define d 26
+#define q 13
+
+bool rabinKarpCheck(char txt[], char letter)
+{
+    int M = 1;
+    int N = 5;
+    int i, j;
+    int p = 0;
+    int t = 0;
+    int h = 1;
+    char pat[1];
+    pat[0] = letter;
+    for (i = 0; i < M - 1; i++)
+    {
+        h = (h * d) % q;
+    }
+
+    for (i = 0; i < M; i++)
+    {
+        p = (d * p + pat[i]) % q;
+        t = (d * t + txt[i]) % q;
+    }
+
+    for (i = 0; i <= N - M; i++)
+    {
+        if (p == t)
+        {
+            bool flag = true;
+            for (j = 0; j < M; j++)
+            {
+                if (txt[i + j] != pat[j])
+                {
+                    flag = false;
+                    break;
+                }
+                if (flag)
+                {
+                    return true;
+                }
+            }
+
+            // if (j == M)
+            // {
+            //     return true;
+            // }
+            // else
+            // {
+            //     return false;
+            // }
+        }
+
+        if (i < N - M)
+        {
+            t = (d * (t - txt[i] * h) + txt[i + M]) % q;
+            if (t < 0)
+                t = (t + q);
+        }
+    }
+    return false;
+}
+
 // int edTable[5][5] = {0};
 
 int editDistance(string str1, string str2)
@@ -43,7 +105,3 @@ int editDistance(string str1, string str2)
     }
     return edTable[5][5];
 }
-
-// bool rabin_karp()
-
-
