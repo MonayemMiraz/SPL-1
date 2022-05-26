@@ -14,7 +14,7 @@ char tryWord3[5];
 char tryWord4[5];
 char tryWord5[5];
 char tryWord6[5];
-int score = 0;
+// int score = 0;
 char result = 'N';
 char Alphabates[26] = {'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
                        'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
@@ -28,6 +28,19 @@ char upperLetter(char ch)
     }
     return ch;
 }
+
+// void playAgain(){
+//     char decision;
+//     cout << "\n\nDo you want to play Again ?(Y/N)  ";
+//     cin >> decision;
+//     decision = upperLetter(decision);
+//     if(decision == 'Y'){
+//         playwordAgain();
+//     }
+//     else{
+//         exit(0);
+//     }
+// }
 
 // function for using delay in console for design
 void my_Sleep(unsigned long ms)
@@ -240,11 +253,11 @@ bool rightPosition(char x)
     if (rabinKarpCheck(randSelectedWord, x))
     {
 
-    for (int i = 0; i < 5; i++)
-    {
-        if ((randSelectedWord[i] == x) && (tryWord1[i] == randSelectedWord[i] || tryWord2[i] == randSelectedWord[i] || tryWord3[i] == randSelectedWord[i] || tryWord4[i] == randSelectedWord[i] || tryWord5[i] == randSelectedWord[i] || tryWord6[i] == randSelectedWord[i]))
-            return true;
-    }
+        for (int i = 0; i < 5; i++)
+        {
+            if ((randSelectedWord[i] == x) && (tryWord1[i] == randSelectedWord[i] || tryWord2[i] == randSelectedWord[i] || tryWord3[i] == randSelectedWord[i] || tryWord4[i] == randSelectedWord[i] || tryWord5[i] == randSelectedWord[i] || tryWord6[i] == randSelectedWord[i]))
+                return true;
+        }
     }
     return false;
 }
@@ -400,7 +413,10 @@ void checkTry1()
         }
 
         result = 'Y';
+        // playAgain();
+
     }
+
     else
     {
         for (int i = 0; i < 5; i++)
@@ -478,6 +494,7 @@ void checkTry2()
         }
 
         result = 'Y';
+        // playAgain();
     }
 
     else
@@ -543,7 +560,9 @@ void checkTry3()
         }
 
         result = 'Y';
+        // playAgain();
     }
+
     else
     {
         for (int i = 0; i < 5; i++)
@@ -607,7 +626,9 @@ void checkTry4()
         }
 
         result = 'Y';
+        // playAgain();
     }
+
     else
     {
         for (int i = 0; i < 5; i++)
@@ -671,7 +692,9 @@ void checkTry5()
         }
 
         result = 'Y';
+        // playAgain();
     }
+
     else
     {
         for (int i = 0; i < 5; i++)
@@ -735,6 +758,7 @@ void checkTry6()
         }
 
         result = 'Y';
+        // playAgain();
     }
     else
     {
@@ -761,6 +785,19 @@ void checkTry6()
         }
     }
     cout << DOUBLESPACE;
+
+    cout << "The correct word is : ";
+    cout << RESET;
+
+    for (int i = 0; i < 5; i++)
+    {
+        cout << GREEN;
+        cout << " " << randSelectedWord[i] << " ";
+        cout << RESET;
+    }
+
+    cout << DOUBLESPACE;
+    // playAgain();
 }
 
 void checkTry()
@@ -870,9 +907,25 @@ void checkTry()
     }
 }
 
+// void playwordAgain(){
+
+//     cout << CLEAR;
+//     if (!shouldStart())
+//     {
+//         exit(0);
+//     }
+
+//     selectRandomWord();
+
+//     // instructions();
+
+//     checkTry();
+// }
+
+
 void PlayWord()
 {
-    showTitle(750000, 100000);
+    // showTitle(750000, 100000);
     showTitle(0, 1000000);
 
     if (!shouldStart())

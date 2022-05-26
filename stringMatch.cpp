@@ -69,7 +69,7 @@ bool rabinKarpCheck(char txt[], char letter)
 
 int editDistance(string str1, string str2)
 {
-    int edTable[5][5] = {0};
+    int edTable[6][6] = {0};
     for (int i = 1; i <= 5; i++)
     {
         edTable[0][i] = i;
