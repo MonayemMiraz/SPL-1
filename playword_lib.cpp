@@ -210,6 +210,22 @@ void dashMatrix(int n)
     }
 }
 
+void clearAllVariable()
+{
+    for (int i = 0; i < 5; i++)
+    {
+        randSelectedWord[i]='\0';
+        tryWord1[i]='\0';
+        tryWord2[i]='\0';
+        tryWord3[i]='\0';
+        tryWord4[i]='\0';
+        tryWord5[i]='\0';
+        tryWord6[i]='\0';
+    }
+    
+    result = 'N';
+}
+
 void keyboard()
 {
 
@@ -413,7 +429,7 @@ void checkTry1()
         }
 
         result = 'Y';
-        // playAgain();
+        playAgain();
     }
 
     else
@@ -493,7 +509,7 @@ void checkTry2()
         }
 
         result = 'Y';
-        // playAgain();
+        playAgain();
     }
 
     else
@@ -559,7 +575,7 @@ void checkTry3()
         }
 
         result = 'Y';
-        // playAgain();
+        playAgain();
     }
 
     else
@@ -625,7 +641,7 @@ void checkTry4()
         }
 
         result = 'Y';
-        // playAgain();
+        playAgain();
     }
 
     else
@@ -691,7 +707,7 @@ void checkTry5()
         }
 
         result = 'Y';
-        // playAgain();
+        playAgain();
     }
 
     else
@@ -757,7 +773,7 @@ void checkTry6()
         }
 
         result = 'Y';
-        // playAgain();
+        playAgain();
     }
     else
     {
@@ -797,7 +813,21 @@ void checkTry6()
     }
 
     cout << DOUBLESPACE;
-    // playAgain();
+    playAgain();
+}
+
+void playAgain(){
+    char playAgainChoice;
+    cout << CYAN << "\nDo you want to play again? (Y/N) : " << RESET;
+    cin >> playAgainChoice;
+    playAgainChoice = upperLetter(playAgainChoice);
+    if(playAgainChoice == 'Y'){
+        playwordAgain();
+    }
+    else{
+        cout << CYAN << "\nThank you for playing!\n" << RESET;
+        exit(0);
+    }
 }
 
 void checkTry()
@@ -907,20 +937,18 @@ void checkTry()
     }
 }
 
-// void playwordAgain(){
+void playwordAgain(){
 
-//     cout << CLEAR;
-//     if (!shouldStart())
-//     {
-//         exit(0);
-//     }
+    cout << CLEAR;
 
-//     selectRandomWord();
+    clearAllVariable();
 
-//     // instructions();
+    selectRandomWord();
 
-//     checkTry();
-// }
+    // instructions();
+
+    checkTry();
+}
 
 void PlayWord()
 {

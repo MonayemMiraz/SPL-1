@@ -8,14 +8,17 @@ using namespace std;
 
 int main()
 {
-    cout << "Press (1) to play English PlayWord\nPress (2) to play Bangla PlayWord \n";
-    cout << "Enter Your choice";
+    showTitle(0, 1000);
+    cout << DOUBLESPACE << "Press (1) to play English PlayWord\nPress (2) to play Bangla PlayWord \n";
+    cout << "Enter Your choice : ";
     int choice;
     cin >> choice;
-    if(choice == 1){
+    if (choice == 1)
+    {
         PlayWord();
     }
-    if(choice == 2){
+    if (choice == 2)
+    {
         BanglaPlayWord();
     }
 }

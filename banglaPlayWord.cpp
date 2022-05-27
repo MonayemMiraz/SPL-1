@@ -79,9 +79,9 @@ void selectRandBnWord()
 {
     int randWord;
     srand(time(NULL));
-    randWord = rand() % 91;
+    randWord = rand() % 90;
 
-    cout <<" " << endl;
+    cout << " " << endl;
     // //------------------------------------------------------------------------
     // cout << "HOise??" << endl;
     string str;
@@ -98,7 +98,7 @@ void selectRandBnWord()
     //------------------------------------------------------------------------
     // cout << "HOise??";
     string temp;
-    temp = randSelectedBnWord.substr(3,9);
+    temp = randSelectedBnWord.substr(3, 9);
     mstr[0] = randSelectedBnWord.substr(0, 3);
     mstr[1] = temp.substr(0, 3);
     mstr[2] = randSelectedBnWord.substr(6, 9);
@@ -113,8 +113,8 @@ void banglaInstructions()
 
 void checkBnTry1()
 {
-    string str1[3],temp;
-    temp = tryBnWord1.substr(3,9);
+    string str1[3], temp;
+    temp = tryBnWord1.substr(3, 9);
     str1[0] = tryBnWord1.substr(0, 3);
     str1[1] = temp.substr(0, 3);
     str1[2] = tryBnWord1.substr(6, 9);
@@ -128,7 +128,7 @@ void checkBnTry1()
         dashBnMatrix(3);
         cout << DOUBLESPACE << CYAN;
         cout << " আপনি সঠিক অনুমান করেছেন । ";
-        cout << GREEN;
+        cout << RESET << GREEN;
         cout << " " << str1[0] << "  " << str1[1] << "  " << str1[2] << " ";
         cout << RESET;
         BnResult = 'Y';
@@ -162,10 +162,10 @@ void checkBnTry1()
 
 void checkBnTry2()
 {
-    string str2[3],temp;
-    temp = tryBnWord2.substr(3,9);
+    string str2[3], temp;
+    temp = tryBnWord2.substr(3, 9);
     str2[0] = tryBnWord2.substr(0, 3);
-    str2[1] = temp.substr(0,3);
+    str2[1] = temp.substr(0, 3);
     str2[2] = tryBnWord2.substr(6, 9);
 
     if (tryBnWord2 == randSelectedBnWord)
@@ -177,7 +177,7 @@ void checkBnTry2()
         dashBnMatrix(2);
         cout << DOUBLESPACE << CYAN;
         cout << " আপনি সঠিক অনুমান করেছেন । ";
-        cout << GREEN;
+        cout << RESET << GREEN;
         cout << " " << str2[0] << "  " << str2[1] << "  " << str2[2] << " ";
         cout << RESET;
         BnResult = 'Y';
@@ -211,8 +211,8 @@ void checkBnTry2()
 
 void checkBnTry3()
 {
-    string str3[3],temp;
-    temp = tryBnWord3.substr(3,9);
+    string str3[3], temp;
+    temp = tryBnWord3.substr(3, 9);
     str3[0] = tryBnWord3.substr(0, 3);
     str3[1] = temp.substr(0, 3);
     str3[2] = tryBnWord3.substr(6, 9);
@@ -226,7 +226,7 @@ void checkBnTry3()
         dashBnMatrix(1);
         cout << DOUBLESPACE << CYAN;
         cout << " আপনি সঠিক অনুমান করেছেন । ";
-        cout << GREEN;
+        cout << RESET << GREEN;
         cout << " " << str3[0] << "  " << str3[1] << "  " << str3[2] << " ";
         cout << RESET;
         BnResult = 'Y';
@@ -260,8 +260,8 @@ void checkBnTry3()
 
 void checkBnTry4()
 {
-    string str4[3],temp;
-    temp = tryBnWord4.substr(3,9);
+    string str4[3], temp;
+    temp = tryBnWord4.substr(3, 9);
     str4[0] = tryBnWord4.substr(0, 3);
     str4[1] = temp.substr(0, 3);
     str4[2] = tryBnWord4.substr(6, 9);
@@ -275,7 +275,7 @@ void checkBnTry4()
         dashBnMatrix(0);
         cout << DOUBLESPACE << CYAN;
         cout << " আপনি সঠিক অনুমান করেছেন । ";
-        cout << GREEN;
+        cout << RESET << GREEN;
         cout << " " << str4[0] << "  " << str4[1] << "  " << str4[2] << " ";
         cout << RESET;
         BnResult = 'Y';
