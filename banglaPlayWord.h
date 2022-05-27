@@ -18,6 +18,7 @@ using namespace std;
 
 extern string randSelectedBnWord;
 
+
 extern string tryBnWord1;
 extern string tryBnWord2;
 extern string tryBnWord3;
@@ -28,8 +29,11 @@ extern string tryBnWord4;
 void selectRandBnWord();
 void banglaInstructions();
 void checkBnTry();
-void chechBnTry1();
-void chechBnTry2();
-void chechBnTry3();
-void chechBnTry4();
+void checkBnTry1();
+void checkBnTry2();
+void checkBnTry3();
+void checkBnTry4();
 void BanglaPlayWord();
+void showBnTitle(int timeForGap, int timeForClear);
+void dashBnMatrix(int n);
+void my_BnSleep(unsigned long ms);

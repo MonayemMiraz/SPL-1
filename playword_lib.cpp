@@ -414,7 +414,6 @@ void checkTry1()
 
         result = 'Y';
         // playAgain();
-
     }
 
     else
@@ -745,7 +744,7 @@ void checkTry6()
         }
 
         cout << DOUBLESPACE;
-        dashMatrix(5);
+        dashMatrix(0);
         cout << DOUBLESPACE << CYAN;
         cout << "You Win!!! The correct word is : ";
         cout << RESET;
@@ -783,17 +782,18 @@ void checkTry6()
                 cout << RESET;
             }
         }
-    }
-    cout << DOUBLESPACE;
 
-    cout << "The correct word is : ";
-    cout << RESET;
+        cout << DOUBLESPACE;
 
-    for (int i = 0; i < 5; i++)
-    {
-        cout << GREEN;
-        cout << " " << randSelectedWord[i] << " ";
+        cout << "The correct word is : ";
         cout << RESET;
+
+        for (int i = 0; i < 5; i++)
+        {
+            cout << GREEN;
+            cout << " " << randSelectedWord[i] << " ";
+            cout << RESET;
+        }
     }
 
     cout << DOUBLESPACE;
@@ -922,16 +922,15 @@ void checkTry()
 //     checkTry();
 // }
 
-
 void PlayWord()
 {
     // showTitle(750000, 100000);
     showTitle(0, 1000000);
 
-    if (!shouldStart())
-    {
-        exit(0);
-    }
+    // if (!shouldStart())
+    // {
+    //     exit(0);
+    // }
 
     selectRandomWord();
 

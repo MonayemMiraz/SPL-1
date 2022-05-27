@@ -51,3 +51,5 @@ void checkTry4();
 void checkTry5();
 void checkTry6();
 void PlayWord();
+// void playAgain();
+// void playwordAgain();
