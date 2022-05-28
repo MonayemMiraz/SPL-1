@@ -106,9 +106,41 @@ void selectRandBnWord()
 
 void banglaInstructions()
 {
-    cout << "Some intructions later";
+    showBnTitle(0, 600000);
     cout << DOUBLESPACE;
-    my_BnSleep(5000000);
+
+    cout << CYAN;
+    cout << "**  শব্দটি সর্বোচ্চ চার(4) টি চেষ্টায় অনুমান করতে হবে ।";
+    cout << DOUBLESPACE;
+
+    cout << "** প্রত্যেকটি অনুমান করা শব্দ তিন(3)  অক্ষরবিশিষ্ট হতে হবে এবং শব্দটি অবশ্যই মাত্রাহীন ও যুক্তবর্ণহীন হতে হবে । ENTER বাটন চেপে সাবমিট করতে হবে ।";
+    cout << DOUBLESPACE;
+
+    cout << "** প্রত্যেক অনুমান শেষে কিছু রঙ্গিন সঙ্কেত এর সাহায্যে দেখান হবে অনুমান করা শব্দটি মুল শব্দের কতটুকু কাছাকাছি।";
+    cout << RESET;
+    cout << DOUBLESPACE << endl;
+
+    cout << CYAN << "পরবর্তী ধাপ এ যেতে ENTER চাপুন.... " << RESET << endl;
+    cin.get();
+
+    showBnTitle(0, 0);
+    cout << RESET;
+    cout << DOUBLESPACE;
+
+    cout << CYAN;
+    cout << "-> অক্ষর : " << RESET;
+    cout << GREEN << " ক " << RESET << "," << GREEN << " খ " << RESET << "," << GREEN << " গ " << RESET << CYAN << " মুল শব্ধে আছে এবং সঠিক জাগায় আছে ।";
+    cout << DOUBLESPACE;
+    cout << "-> অক্ষর : " << RESET;
+    cout << YELLOW << " চ " << RESET << "," << YELLOW << " ছ " << RESET << "," << YELLOW << " জ " << RESET << CYAN << " মুল শব্দে আছে কিন্তু ভুল জাগায় আছে ।";
+    cout << DOUBLESPACE;
+    cout << "-> অক্ষর : " << RESET;
+    cout << RED << " ট " << RESET << "," << RED << " ঠ " << RESET << "," << RED << " থ " << RESET << CYAN << " মুল শব্দে নেই ";
+    cout << RESET;
+    cout << DOUBLESPACE << DOUBLESPACE;
+    // my_Sleep(5000000);
+    cout << CYAN << "পরবর্তী ধাপ এ যেতে ENTER চাপুন.... " << RESET << endl;
+    cin.get();
 }
 
 void checkBnTry1()
@@ -306,7 +338,7 @@ void checkBnTry4()
 
         cout << DOUBLESPACE;
 
-        cout << "সঠিক শব্দটি হচ্ছে  : ";
+        cout << CYAN << "সঠিক শব্দটি হচ্ছে  : ";
         cout << RESET;
 
         for (int i = 0; i < 3; i++)

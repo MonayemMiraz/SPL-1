@@ -29,18 +29,6 @@ char upperLetter(char ch)
     return ch;
 }
 
-// void playAgain(){
-//     char decision;
-//     cout << "\n\nDo you want to play Again ?(Y/N)  ";
-//     cin >> decision;
-//     decision = upperLetter(decision);
-//     if(decision == 'Y'){
-//         playwordAgain();
-//     }
-//     else{
-//         exit(0);
-//     }
-// }
 
 // function for using delay in console for design
 void my_Sleep(unsigned long ms)
@@ -180,7 +168,10 @@ void instructions()
     cout << RESET;
     cout << DOUBLESPACE << endl;
 
-    showTitle(0, 5000000);
+    cout << CYAN << "Press Enter to continue.... "<< RESET << endl;
+    cin.get();
+
+    showTitle(0, 0);
     cout << RESET;
     cout << DOUBLESPACE;
 
@@ -195,7 +186,9 @@ void instructions()
     cout << RED << " a " << RESET << "," << RED << " o " << RESET << CYAN << " are not in the word ";
     cout << RESET;
     cout << DOUBLESPACE << DOUBLESPACE;
-    my_Sleep(5000000);
+    // my_Sleep(5000000);
+    cout << CYAN << "Press Enter to continue.... "<< RESET << endl;
+    cin.get();
 }
 
 void dashMatrix(int n)
@@ -429,7 +422,7 @@ void checkTry1()
         }
 
         result = 'Y';
-        playAgain();
+        // playAgain();
     }
 
     else
@@ -509,7 +502,7 @@ void checkTry2()
         }
 
         result = 'Y';
-        playAgain();
+        // playAgain();
     }
 
     else
@@ -575,7 +568,7 @@ void checkTry3()
         }
 
         result = 'Y';
-        playAgain();
+        // playAgain();
     }
 
     else
@@ -641,7 +634,7 @@ void checkTry4()
         }
 
         result = 'Y';
-        playAgain();
+        // playAgain();
     }
 
     else
@@ -707,7 +700,7 @@ void checkTry5()
         }
 
         result = 'Y';
-        playAgain();
+        // playAgain();
     }
 
     else
@@ -773,7 +766,7 @@ void checkTry6()
         }
 
         result = 'Y';
-        playAgain();
+        // playAgain();
     }
     else
     {
@@ -813,26 +806,12 @@ void checkTry6()
     }
 
     cout << DOUBLESPACE;
-    playAgain();
-}
-
-void playAgain(){
-    char playAgainChoice;
-    cout << CYAN << "\nDo you want to play again? (Y/N) : " << RESET;
-    cin >> playAgainChoice;
-    playAgainChoice = upperLetter(playAgainChoice);
-    if(playAgainChoice == 'Y'){
-        playwordAgain();
-    }
-    else{
-        cout << CYAN << "\nThank you for playing!\n" << RESET;
-        exit(0);
-    }
+    // playAgain();
 }
 
 void checkTry()
 {
-    showTitle(0, 5000000);
+    showTitle(0, 5000);
     dashMatrix(6);
     keyboard();
 
@@ -937,19 +916,6 @@ void checkTry()
     }
 }
 
-void playwordAgain(){
-
-    cout << CLEAR;
-
-    clearAllVariable();
-
-    selectRandomWord();
-
-    // instructions();
-
-    checkTry();
-}
-
 void PlayWord()
 {
     // showTitle(750000, 100000);
@@ -965,4 +931,5 @@ void PlayWord()
     instructions();
 
     checkTry();
+    clearAllVariable();
 }
